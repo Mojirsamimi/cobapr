@@ -1,6 +1,8 @@
 package edu.brandeis.bostonaccessibleroutes;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -18,10 +20,37 @@ public class DataCollectionActivity extends AppCompatActivity {
         final Button buttonIncline = (Button) findViewById(R.id.button_incline);
 
         buttonIncline.setOnClickListener(new View.OnClickListener() {
-
+            AlertDialog.Builder builder = new AlertDialog.Builder(DataCollectionActivity.this);
             public void onClick(View v) {
-                Intent selectDataTypeIntent=new Intent(DataCollectionActivity.this,SelectDataTypeActivity.class);
-                startActivity(selectDataTypeIntent);
+                //  Intent selectDataTypeIntent=new Intent(DataCollectionActivity.this,SelectDataTypeActivity.class);
+                // startActivity(selectDataTypeIntent);
+
+
+
+                builder.setMessage("Add Evidences?");
+
+                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent TakePhotoIntent=new Intent(DataCollectionActivity.this,TakePhotoActivity.class);
+                        startActivity(TakePhotoIntent);
+
+                        dialog.dismiss();
+                    }
+                });
+
+                builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        // Do nothing
+                        dialog.dismiss();
+                    }
+                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
             }
         });
 
