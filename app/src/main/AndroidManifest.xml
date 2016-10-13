@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="edu.brandeis.bostonaccessibleroutes">
+    <uses-feature android:name="android.hardware.camera" android:required="true">
+    </uses-feature>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
 
     <application
         android:allowBackup="true"
@@ -16,6 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".SelectDataTypeActivity" android:theme="@style/Theme.Transparent"></activity>
+        <activity android:name=".TakePhotoActivity" android:theme="@style/Theme.Transparent"></activity>
+
     </application>
 
 </manifest>
