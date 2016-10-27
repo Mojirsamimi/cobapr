@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_data_collection"
     android:layout_width="match_parent"
@@ -18,7 +19,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true">
@@ -29,100 +30,102 @@
                 android:id="@+id/map"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
-                android:layout_height="222dp"
+                android:layout_height="match_parent"
                 tools:context="com.brandeis.macy.googlemaps.MapsActivity" />
+            <com.github.clans.fab.FloatingActionMenu
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:paddingRight="10dp"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                fab:menu_labels_ellipsize="end"
+                fab:menu_labels_singleLine="true"
+                fab:menu_backgroundColor="#ccffffff"
+                fab:menu_labels_position="right"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                app:menu_fab_label="@string/add_new_route_condition">
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add_white_24dp"
+                    fab:fab_size="mini"
+                    app:fab_label="@string/route_condition_inclination" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add_white_24dp"
+                    fab:fab_size="mini"
+                    app:fab_label="@string/route_condition_declination" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add_white_24dp"
+                    fab:fab_size="mini"
+                    app:fab_label="@string/route_condition_curve_curb" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add_white_24dp"
+                    fab:fab_size="mini"
+                    app:fab_label="@string/route_condition_cross_slope" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add_white_24dp"
+                    fab:fab_size="mini"
+                    app:fab_label="@string/route_condition_hole" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add_white_24dp"
+                    fab:fab_size="mini"
+                    app:fab_label="@string/route_condition_debris" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add_white_24dp"
+                    fab:fab_size="mini"
+                    app:fab_label="@string/route_condition_narrow_sidewalk" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add_white_24dp"
+                    fab:fab_size="mini"
+                    app:fab_label="@string/route_condition_uneven_pavement" />
+
+                <com.github.clans.fab.FloatingActionButton
+                    android:id="@+id/fab9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_add_white_24dp"
+                    fab:fab_size="mini"
+                    app:fab_label="@string/route_condition_steps" />
+
+
+
+
+
+            </com.github.clans.fab.FloatingActionMenu>
 
         </FrameLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:text="Sharp Incline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button_incline"
-                android:layout_weight="1"
-                android:lines="3" />
-
-            <Button
-                android:text="Sharp Decline"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button15"
-                android:layout_weight="1"
-                android:lines="3" />
-
-            <Button
-                android:text="Bump"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button16"
-                android:layout_weight="1"
-                android:lines="3" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:text="Too Narrow"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button17"
-                android:layout_weight="1"
-                android:lines="3" />
-
-            <Button
-                android:text="Obstacle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button18"
-                android:layout_weight="1"
-                android:lines="3" />
-
-            <Button
-                android:text="Stairs"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button19"
-                android:layout_weight="1"
-                android:lines="3" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:text="Elevation"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button20"
-                android:layout_weight="1"
-                android:lines="3" />
-
-            <Button
-                android:text="Potehole"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button21"
-                android:layout_weight="1"
-                android:lines="3" />
-
-            <Button
-                android:text="Depressions"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/button22"
-                android:layout_weight="1"
-                android:lines="3" />
-        </LinearLayout>
 
     </LinearLayout>
 

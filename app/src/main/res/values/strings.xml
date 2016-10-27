@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">BostonAccessibleRoutes</string>
+    <string name="add_new_route_condition">Add New Route Condition</string>
+    <string name="route_condition_inclination">Inclination</string>
+    <string name="route_condition_declination">Declination</string>
+    <string name="route_condition_curve_curb">Curve/Curb turning point</string>
+    <string name="route_condition_cross_slope">Cross Slope</string>
+    <string name="route_condition_hole">Hole in the ground</string>
+    <string name="route_condition_debris">Debris</string>
+    <string name="route_condition_depression">Depression</string>
+    <string name="route_condition_narrow_sidewalk">Narrow sidewalk</string>
+    <string name="route_condition_uneven_pavement">Uneven pavement</string>
+    <string name="route_condition_steps">Steps</string>
 </resources>
