@@ -12,27 +12,20 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="edu.brandeis.bostonaccessibleroutes.DataCollectionActivity">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <fragment
+        android:id="@+id/map"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        tools:context="edu.brandeis.bostonaccessibleroutes.MapDisplayActivity" />
 
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
 
-            <fragment xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:map="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
-                android:id="@+id/map"
-                android:name="com.google.android.gms.maps.SupportMapFragment"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                tools:context="com.brandeis.macy.googlemaps.MapsActivity" />
-            <com.github.clans.fab.FloatingActionMenu
+
+
+
+
+
+        <com.github.clans.fab.FloatingActionMenu
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:paddingRight="10dp"
@@ -45,88 +38,93 @@
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                app:menu_fab_label="@string/add_new_route_condition">
+                fab:menu_fab_label="@string/add_new_route_condition"
+                >
 
-                <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/fab1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_add_white_24dp"
-                    fab:fab_size="mini"
-                    app:fab_label="@string/route_condition_inclination" />
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add_white_24dp"
+                fab:fab_size="mini"
+                fab:fab_label="@string/route_condition_inclination"
+                style="@style/MenuButtonsStyle"/>
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add_white_24dp"
+                fab:fab_size="mini"
+                fab:fab_label="@string/route_condition_declination"
+                style="@style/MenuButtonsStyle"/>
 
-                <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/fab2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_add_white_24dp"
-                    fab:fab_size="mini"
-                    app:fab_label="@string/route_condition_declination" />
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add_white_24dp"
+                fab:fab_size="mini"
+                fab:fab_label="@string/route_condition_curve_curb"
+                style="@style/MenuButtonsStyle"/>
 
-                <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/fab3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_add_white_24dp"
-                    fab:fab_size="mini"
-                    app:fab_label="@string/route_condition_curve_curb" />
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add_white_24dp"
+                fab:fab_size="mini"
+                fab:fab_label="@string/route_condition_cross_slope"
+                style="@style/MenuButtonsStyle"/>
 
-                <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/fab4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_add_white_24dp"
-                    fab:fab_size="mini"
-                    app:fab_label="@string/route_condition_cross_slope" />
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add_white_24dp"
+                fab:fab_size="mini"
+                fab:fab_label="@string/route_condition_hole"
+                style="@style/MenuButtonsStyle"/>
 
-                <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/fab5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_add_white_24dp"
-                    fab:fab_size="mini"
-                    app:fab_label="@string/route_condition_hole" />
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab6"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add_white_24dp"
+                fab:fab_size="mini"
+                fab:fab_label="@string/route_condition_debris"
+                style="@style/MenuButtonsStyle"/>
 
-                <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/fab6"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_add_white_24dp"
-                    fab:fab_size="mini"
-                    app:fab_label="@string/route_condition_debris" />
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab7"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add_white_24dp"
+                fab:fab_size="mini"
+                fab:fab_label="@string/route_condition_narrow_sidewalk"
+                style="@style/MenuButtonsStyle"/>
 
-                <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/fab7"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_add_white_24dp"
-                    fab:fab_size="mini"
-                    app:fab_label="@string/route_condition_narrow_sidewalk" />
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add_white_24dp"
+                fab:fab_size="mini"
+                fab:fab_label="@string/route_condition_uneven_pavement"
+                style="@style/MenuButtonsStyle"/>
 
-                <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/fab8"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_add_white_24dp"
-                    fab:fab_size="mini"
-                    app:fab_label="@string/route_condition_uneven_pavement" />
-
-                <com.github.clans.fab.FloatingActionButton
-                    android:id="@+id/fab9"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/ic_add_white_24dp"
-                    fab:fab_size="mini"
-                    app:fab_label="@string/route_condition_steps" />
-
-
-
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fab9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_add_white_24dp"
+                fab:fab_size="mini"
+                fab:fab_label="@string/route_condition_steps"
+                style="@style/MenuButtonsStyle"/>
 
 
             </com.github.clans.fab.FloatingActionMenu>
 
-        </FrameLayout>
 
-    </LinearLayout>
+
 
 </RelativeLayout>

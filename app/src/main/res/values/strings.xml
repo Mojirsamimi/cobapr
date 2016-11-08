@@ -11,4 +11,5 @@
     <string name="route_condition_narrow_sidewalk">Narrow sidewalk</string>
     <string name="route_condition_uneven_pavement">Uneven pavement</string>
     <string name="route_condition_steps">Steps</string>
+    <string name="show_db">Show DB</string>
 </resources>
