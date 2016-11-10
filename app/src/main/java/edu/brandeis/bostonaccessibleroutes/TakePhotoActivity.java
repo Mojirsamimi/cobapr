@@ -24,6 +24,7 @@ public class TakePhotoActivity extends AppCompatActivity {
         setContentView(R.layout.activity_take_photo);
 
         Button click = (Button) findViewById(R.id.Bcapture);
+        Button audio = (Button) findViewById(R.id.button3);
         Button button_done=(Button) findViewById(R.id.button_addevidence_done);
         result_photo = (ImageView) findViewById((R.id.imageView));
         button_done.setOnClickListener(new View.OnClickListener() {
@@ -35,6 +36,14 @@ public class TakePhotoActivity extends AppCompatActivity {
         if(!hasCamera()){
             click.setEnabled(false);
         }
+        audio.setOnClickListener(new View.OnClickListener(){
+
+            public void onClick(View v) {
+                Intent AudioRecordingIntent=new Intent(TakePhotoActivity.this,AudioRecordingActivity.class);
+                startActivity(AudioRecordingIntent);
+
+            }
+        });
     }
 
 
