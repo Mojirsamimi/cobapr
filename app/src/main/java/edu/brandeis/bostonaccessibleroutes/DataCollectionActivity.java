@@ -7,18 +7,16 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.os.Build;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
-
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionButton;
@@ -31,11 +29,9 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
-import com.google.android.gms.maps.model.MarkerOptions;
 
 import edu.brandeis.bostonaccessibleroutes.dbutil.AndroidDatabaseManager;
 import edu.brandeis.bostonaccessibleroutes.dbutil.DBHelper;
@@ -61,8 +57,336 @@ public class DataCollectionActivity extends AppCompatActivity implements OnMapRe
         mapFragment.getMapAsync(this);
 
         final FloatingActionButton buttonIncline = (FloatingActionButton) findViewById(R.id.fab1);
+        final FloatingActionButton buttonDecline = (FloatingActionButton) findViewById(R.id.fab2);
+        final FloatingActionButton buttonCurve = (FloatingActionButton) findViewById(R.id.fab3);
+        final FloatingActionButton buttonCrossSlope = (FloatingActionButton) findViewById(R.id.fab4);
+        final FloatingActionButton buttonHole = (FloatingActionButton) findViewById(R.id.fab5);
+        final FloatingActionButton buttonDebris = (FloatingActionButton) findViewById(R.id.fab6);
+        final FloatingActionButton buttonNarrow = (FloatingActionButton) findViewById(R.id.fab7);
+        final FloatingActionButton buttonUneven = (FloatingActionButton) findViewById(R.id.fab8);
+        final FloatingActionButton buttonSteps = (FloatingActionButton) findViewById(R.id.fab9);
 
         buttonIncline.setOnClickListener(new View.OnClickListener() {
+            AlertDialog.Builder builder = new AlertDialog.Builder(DataCollectionActivity.this);
+            public void onClick(View v) {
+                //  Intent selectDataTypeIntent=new Intent(DataCollectionActivity.this,SelectDataTypeActivity.class);
+                // startActivity(selectDataTypeIntent);
+
+
+
+                builder.setMessage("Add Evidences?");
+
+                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent TakePhotoIntent=new Intent(DataCollectionActivity.this,TakePhotoActivity.class);
+                        startActivity(TakePhotoIntent);
+
+                        dialog.dismiss();
+                    }
+                });
+
+                builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+
+                        dialog.dismiss();
+                        if(mydb.insertRouteCondition(12,75,1,"comment","c:\\voice.mp3","c:\\image.jpg"))
+                        {
+                            Toast.makeText(getApplicationContext(), "Route Condition Saved", Toast.LENGTH_SHORT).show();
+                        }else {
+                            Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
+        });
+        buttonDecline.setOnClickListener(new View.OnClickListener() {
+            AlertDialog.Builder builder = new AlertDialog.Builder(DataCollectionActivity.this);
+            public void onClick(View v) {
+                //  Intent selectDataTypeIntent=new Intent(DataCollectionActivity.this,SelectDataTypeActivity.class);
+                // startActivity(selectDataTypeIntent);
+
+
+
+                builder.setMessage("Add Evidences?");
+
+                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent TakePhotoIntent=new Intent(DataCollectionActivity.this,TakePhotoActivity.class);
+                        startActivity(TakePhotoIntent);
+
+                        dialog.dismiss();
+                    }
+                });
+
+                builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+
+                        dialog.dismiss();
+                        if(mydb.insertRouteCondition(12,75,1,"comment","c:\\voice.mp3","c:\\image.jpg"))
+                        {
+                            Toast.makeText(getApplicationContext(), "Route Condition Saved", Toast.LENGTH_SHORT).show();
+                        }else {
+                            Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
+        });
+        buttonCurve.setOnClickListener(new View.OnClickListener() {
+            AlertDialog.Builder builder = new AlertDialog.Builder(DataCollectionActivity.this);
+            public void onClick(View v) {
+                //  Intent selectDataTypeIntent=new Intent(DataCollectionActivity.this,SelectDataTypeActivity.class);
+                // startActivity(selectDataTypeIntent);
+
+
+
+                builder.setMessage("Add Evidences?");
+
+                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent TakePhotoIntent=new Intent(DataCollectionActivity.this,TakePhotoActivity.class);
+                        startActivity(TakePhotoIntent);
+
+                        dialog.dismiss();
+                    }
+                });
+
+                builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+
+                        dialog.dismiss();
+                        if(mydb.insertRouteCondition(12,75,1,"comment","c:\\voice.mp3","c:\\image.jpg"))
+                        {
+                            Toast.makeText(getApplicationContext(), "Route Condition Saved", Toast.LENGTH_SHORT).show();
+                        }else {
+                            Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
+        });
+        buttonCrossSlope.setOnClickListener(new View.OnClickListener() {
+            AlertDialog.Builder builder = new AlertDialog.Builder(DataCollectionActivity.this);
+            public void onClick(View v) {
+                //  Intent selectDataTypeIntent=new Intent(DataCollectionActivity.this,SelectDataTypeActivity.class);
+                // startActivity(selectDataTypeIntent);
+
+
+
+                builder.setMessage("Add Evidences?");
+
+                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent TakePhotoIntent=new Intent(DataCollectionActivity.this,TakePhotoActivity.class);
+                        startActivity(TakePhotoIntent);
+
+                        dialog.dismiss();
+                    }
+                });
+
+                builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+
+                        dialog.dismiss();
+                        if(mydb.insertRouteCondition(12,75,1,"comment","c:\\voice.mp3","c:\\image.jpg"))
+                        {
+                            Toast.makeText(getApplicationContext(), "Route Condition Saved", Toast.LENGTH_SHORT).show();
+                        }else {
+                            Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
+        });
+        buttonHole.setOnClickListener(new View.OnClickListener() {
+            AlertDialog.Builder builder = new AlertDialog.Builder(DataCollectionActivity.this);
+            public void onClick(View v) {
+                //  Intent selectDataTypeIntent=new Intent(DataCollectionActivity.this,SelectDataTypeActivity.class);
+                // startActivity(selectDataTypeIntent);
+
+
+
+                builder.setMessage("Add Evidences?");
+
+                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent TakePhotoIntent=new Intent(DataCollectionActivity.this,TakePhotoActivity.class);
+                        startActivity(TakePhotoIntent);
+
+                        dialog.dismiss();
+                    }
+                });
+
+                builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+
+                        dialog.dismiss();
+                        if(mydb.insertRouteCondition(12,75,1,"comment","c:\\voice.mp3","c:\\image.jpg"))
+                        {
+                            Toast.makeText(getApplicationContext(), "Route Condition Saved", Toast.LENGTH_SHORT).show();
+                        }else {
+                            Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
+        });
+        buttonDebris.setOnClickListener(new View.OnClickListener() {
+            AlertDialog.Builder builder = new AlertDialog.Builder(DataCollectionActivity.this);
+            public void onClick(View v) {
+                //  Intent selectDataTypeIntent=new Intent(DataCollectionActivity.this,SelectDataTypeActivity.class);
+                // startActivity(selectDataTypeIntent);
+
+
+
+                builder.setMessage("Add Evidences?");
+
+                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent TakePhotoIntent=new Intent(DataCollectionActivity.this,TakePhotoActivity.class);
+                        startActivity(TakePhotoIntent);
+
+                        dialog.dismiss();
+                    }
+                });
+
+                builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+
+                        dialog.dismiss();
+                        if(mydb.insertRouteCondition(12,75,1,"comment","c:\\voice.mp3","c:\\image.jpg"))
+                        {
+                            Toast.makeText(getApplicationContext(), "Route Condition Saved", Toast.LENGTH_SHORT).show();
+                        }else {
+                            Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
+        });
+        buttonNarrow.setOnClickListener(new View.OnClickListener() {
+            AlertDialog.Builder builder = new AlertDialog.Builder(DataCollectionActivity.this);
+            public void onClick(View v) {
+                //  Intent selectDataTypeIntent=new Intent(DataCollectionActivity.this,SelectDataTypeActivity.class);
+                // startActivity(selectDataTypeIntent);
+
+
+
+                builder.setMessage("Add Evidences?");
+
+                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent TakePhotoIntent=new Intent(DataCollectionActivity.this,TakePhotoActivity.class);
+                        startActivity(TakePhotoIntent);
+
+                        dialog.dismiss();
+                    }
+                });
+
+                builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+
+                        dialog.dismiss();
+                        if(mydb.insertRouteCondition(12,75,1,"comment","c:\\voice.mp3","c:\\image.jpg"))
+                        {
+                            Toast.makeText(getApplicationContext(), "Route Condition Saved", Toast.LENGTH_SHORT).show();
+                        }else {
+                            Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
+        });
+        buttonUneven.setOnClickListener(new View.OnClickListener() {
+            AlertDialog.Builder builder = new AlertDialog.Builder(DataCollectionActivity.this);
+            public void onClick(View v) {
+                //  Intent selectDataTypeIntent=new Intent(DataCollectionActivity.this,SelectDataTypeActivity.class);
+                // startActivity(selectDataTypeIntent);
+
+
+
+                builder.setMessage("Add Evidences?");
+
+                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent TakePhotoIntent=new Intent(DataCollectionActivity.this,TakePhotoActivity.class);
+                        startActivity(TakePhotoIntent);
+
+                        dialog.dismiss();
+                    }
+                });
+
+                builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+
+                        dialog.dismiss();
+                        if(mydb.insertRouteCondition(12,75,1,"comment","c:\\voice.mp3","c:\\image.jpg"))
+                        {
+                            Toast.makeText(getApplicationContext(), "Route Condition Saved", Toast.LENGTH_SHORT).show();
+                        }else {
+                            Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+
+                AlertDialog alert = builder.create();
+                alert.show();
+            }
+        });
+        buttonSteps.setOnClickListener(new View.OnClickListener() {
             AlertDialog.Builder builder = new AlertDialog.Builder(DataCollectionActivity.this);
             public void onClick(View v) {
                 //  Intent selectDataTypeIntent=new Intent(DataCollectionActivity.this,SelectDataTypeActivity.class);
@@ -106,6 +430,7 @@ public class DataCollectionActivity extends AppCompatActivity implements OnMapRe
 
     }
 
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
@@ -125,6 +450,8 @@ public class DataCollectionActivity extends AppCompatActivity implements OnMapRe
             mMap.setMyLocationEnabled(true);
             mMap.getUiSettings().setZoomControlsEnabled(true);
         }
+        mMap.setMyLocationEnabled(true);
+        mMap.getUiSettings().setZoomControlsEnabled(true);
 
     }
 
