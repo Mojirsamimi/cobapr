@@ -17,6 +17,7 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.github.clans.fab.FloatingActionButton;
@@ -65,6 +66,16 @@ public class DataCollectionActivity extends AppCompatActivity implements OnMapRe
         final FloatingActionButton buttonNarrow = (FloatingActionButton) findViewById(R.id.fab7);
         final FloatingActionButton buttonUneven = (FloatingActionButton) findViewById(R.id.fab8);
         final FloatingActionButton buttonSteps = (FloatingActionButton) findViewById(R.id.fab9);
+        final Button buttonInfo = (Button) findViewById(R.id.question);
+
+        buttonInfo.setOnClickListener(new View.OnClickListener() {
+
+            public void onClick(View v) {
+                Intent Start=new Intent(DataCollectionActivity.this,RoadConditionInfoActivity.class);
+                startActivity(Start);
+
+            }
+        });
 
         buttonIncline.setOnClickListener(new View.OnClickListener() {
             AlertDialog.Builder builder = new AlertDialog.Builder(DataCollectionActivity.this);

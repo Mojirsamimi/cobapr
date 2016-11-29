@@ -20,6 +20,17 @@
         tools:context="edu.brandeis.bostonaccessibleroutes.MapDisplayActivity" />
 
 
+    <Button
+        android:text="question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="60dp"
+        android:id="@+id/question"
+        android:background="@drawable/round_button"/>
+
     <com.github.clans.fab.FloatingActionMenu
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -31,10 +42,10 @@
             fab:menu_backgroundColor="#ccffffff"
             fab:menu_labels_position="right"
         fab:menu_fab_label="@string/add_new_route_condition"
+        android:id="@+id/floatingActionMenu"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:id="@+id/floatingActionMenu">
+        android:layout_alignParentStart="true">
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fab1"

@@ -39,6 +39,8 @@
         <activity android:name=".SelectDataTypeActivity" android:theme="@style/AppTheme"></activity>
         <activity android:name=".TakePhotoActivity" android:theme="@style/AppTheme"></activity>
         <activity android:name=".MapDisplayActivity" android:theme="@style/AppTheme"></activity>
+        <activity android:name=".RoadConditionInfoActivity" android:theme="@style/AppTheme"></activity>
+
         <activity android:name=".dbutil.AndroidDatabaseManager"
             android:theme="@style/Theme.AppCompat.Light"/>
         <activity android:name=".AudioRecordingActivity" android:theme="@style/AppTheme"></activity>

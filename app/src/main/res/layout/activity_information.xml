@@ -4,67 +4,87 @@
     android:layout_height="match_parent"
     android:weightSum="1">
 
-    <EditText
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="How To Use The App:"
         android:ems="10"
         android:layout_marginTop="20dp"
-        android:id="@+id/useApp" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="1. Click on the red button with a cross on the buttom-left corner of the screen"
-        android:ems="10"
-        android:layout_below="@+id/useApp"
-        android:id="@+id/step1" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="2. Select the type of the road condition you wish to capture"
-        android:ems="10"
-        android:layout_below="@+id/step1"
-
-        android:id="@+id/step2"/>
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text='3. Choose "No" to finish the process, or "Yes" to add more evidences'
-        android:ems="10"
-        android:layout_below="@+id/step2"
-
-        android:id="@+id/step3" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text='4. If you choose "Yes," you will see the options of adding a photo, a audio recording, and text description. '
-        android:ems="10"
-        android:layout_below="@+id/step3"
-
-        android:id="@+id/step4" />
-
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text='5. After you input the evidences, click on "Save" to report the road condition'
-        android:ems="10"
-        android:layout_below="@+id/step4"
-
-        android:id="@+id/step5" />
+        android:id="@+id/useApp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline" />
 
     <Button
         android:text="I Got It"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/know_the_info"
-        android:layout_marginLeft="135dp"
-        android:layout_marginStart="135dp"
-        android:layout_below="@+id/step5"
+        android:layout_marginLeft="138dp"
+        android:layout_marginStart="138dp"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="28dp" />
+        android:layout_marginBottom="67dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text='5. After you input the evidences, click on "Save" to report the road condition'
+        android:ems="10"
+
+        android:id="@+id/step5"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_above="@+id/know_the_info"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="31dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text='4. If you choose "Yes," you will see the options of adding a photo, a audio recording, and text description. '
+        android:ems="10"
+
+        android:id="@+id/step4"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_above="@+id/step5"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="23dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text='3. Choose "No" to finish the process, or "Yes" to add more evidences'
+        android:ems="10"
+
+        android:id="@+id/step3"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_above="@+id/step4"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="19dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2. Select the type of the road condition you wish to capture"
+        android:ems="10"
+
+        android:id="@+id/step2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_above="@+id/step3"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="15dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1. Click on the red button with a cross on the buttom-left corner of the screen"
+        android:ems="10"
+        android:id="@+id/step1"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:layout_above="@+id/step2"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 </RelativeLayout>
