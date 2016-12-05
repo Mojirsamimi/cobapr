@@ -21,7 +21,7 @@
 
 
     <Button
-        android:text="question"
+        android:text="Tutorial"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -41,7 +41,7 @@
             fab:menu_labels_singleLine="true"
             fab:menu_backgroundColor="#ccffffff"
             fab:menu_labels_position="right"
-        fab:menu_fab_label="@string/add_new_route_condition"
+        fab:menu_fab_label=""
         android:id="@+id/floatingActionMenu"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"

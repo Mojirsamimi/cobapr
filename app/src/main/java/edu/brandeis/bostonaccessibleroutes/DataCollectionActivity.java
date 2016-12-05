@@ -71,7 +71,7 @@ public class DataCollectionActivity extends AppCompatActivity implements OnMapRe
         buttonInfo.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
-                Intent Start=new Intent(DataCollectionActivity.this,RoadConditionInfoActivity.class);
+                Intent Start=new Intent(DataCollectionActivity.this,InfoActivity.class);
                 startActivity(Start);
 
             }
