@@ -57,14 +57,6 @@
             style="@style/MenuButtonsStyle"
             android:layout_toRightOf="@+id/fab2"
             android:layout_toEndOf="@+id/fab3" />
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/fab2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/ic_add_white_24dp"
-            fab:fab_size="mini"
-            fab:fab_label="@string/route_condition_declination"
-            style="@style/MenuButtonsStyle"/>
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fab3"

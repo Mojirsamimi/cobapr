@@ -58,7 +58,6 @@ public class DataCollectionActivity extends AppCompatActivity implements OnMapRe
         mapFragment.getMapAsync(this);
 
         final FloatingActionButton buttonIncline = (FloatingActionButton) findViewById(R.id.fab1);
-        final FloatingActionButton buttonDecline = (FloatingActionButton) findViewById(R.id.fab2);
         final FloatingActionButton buttonCurve = (FloatingActionButton) findViewById(R.id.fab3);
         final FloatingActionButton buttonCrossSlope = (FloatingActionButton) findViewById(R.id.fab4);
         final FloatingActionButton buttonHole = (FloatingActionButton) findViewById(R.id.fab5);
@@ -78,46 +77,6 @@ public class DataCollectionActivity extends AppCompatActivity implements OnMapRe
         });
 
         buttonIncline.setOnClickListener(new View.OnClickListener() {
-            AlertDialog.Builder builder = new AlertDialog.Builder(DataCollectionActivity.this);
-            public void onClick(View v) {
-                //  Intent selectDataTypeIntent=new Intent(DataCollectionActivity.this,SelectDataTypeActivity.class);
-                // startActivity(selectDataTypeIntent);
-
-
-
-                builder.setMessage("Add Evidences?");
-
-                builder.setPositiveButton("YES", new DialogInterface.OnClickListener() {
-
-                    public void onClick(DialogInterface dialog, int which) {
-                        Intent TakePhotoIntent=new Intent(DataCollectionActivity.this,TakePhotoActivity.class);
-                        startActivity(TakePhotoIntent);
-
-                        dialog.dismiss();
-                    }
-                });
-
-                builder.setNegativeButton("NO", new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-
-
-                        dialog.dismiss();
-                        if(mydb.insertRouteCondition(12,75,1,"comment","c:\\voice.mp3","c:\\image.jpg"))
-                        {
-                            Toast.makeText(getApplicationContext(), "Route Condition Saved", Toast.LENGTH_SHORT).show();
-                        }else {
-                            Toast.makeText(getApplicationContext(), "Error", Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-
-                AlertDialog alert = builder.create();
-                alert.show();
-            }
-        });
-        buttonDecline.setOnClickListener(new View.OnClickListener() {
             AlertDialog.Builder builder = new AlertDialog.Builder(DataCollectionActivity.this);
             public void onClick(View v) {
                 //  Intent selectDataTypeIntent=new Intent(DataCollectionActivity.this,SelectDataTypeActivity.class);

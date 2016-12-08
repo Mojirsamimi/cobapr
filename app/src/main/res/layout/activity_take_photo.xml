@@ -9,16 +9,6 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
 
-    <Button
-        android:text="Attach Voice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/button3"
-        android:layout_alignBaseline="@+id/Bcapture"
-        android:layout_alignBottom="@+id/Bcapture"
-        android:layout_alignRight="@+id/imageView"
-        android:layout_alignEnd="@+id/imageView" />
-
     <ImageView
         android:layout_width="300dp"
         android:layout_marginTop="25dp"
@@ -28,7 +18,7 @@
         android:layout_centerHorizontal="true" />
 
     <Button
-        android:text="Attach Photo"
+        android:text="Image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/Bcapture"
@@ -62,5 +52,15 @@
         android:layout_below="@+id/editText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="14dp" />
+
+    <Button
+        android:text="Voice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:layout_alignBaseline="@+id/Bcapture"
+        android:layout_alignBottom="@+id/Bcapture"
+        android:layout_alignRight="@+id/imageView"
+        android:layout_alignEnd="@+id/imageView" />
 
 </RelativeLayout>
