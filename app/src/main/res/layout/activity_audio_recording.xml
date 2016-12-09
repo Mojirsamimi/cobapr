@@ -9,18 +9,6 @@ android:paddingLeft="@dimen/activity_horizontal_margin"
 android:paddingRight="@dimen/activity_horizontal_margin"
 android:paddingTop="@dimen/activity_vertical_margin">
 
-    <ImageButton
-        android:layout_height="wrap_content"
-        android:background="@color/white_transparent"
-        android:id="@+id/play"
-        app:srcCompat="@drawable/play"
-        android:adjustViewBounds="true"
-        android:elevation="0dp"
-        android:layout_width="100dp"
-        android:layout_alignTop="@+id/stopPlay"
-        android:layout_alignLeft="@+id/record"
-        android:layout_alignStart="@+id/record" />
-
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -62,6 +50,18 @@ android:paddingTop="@dimen/activity_vertical_margin">
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/stop"
         android:layout_alignStart="@+id/stop" />
+
+    <ImageButton
+        android:layout_height="wrap_content"
+        android:background="@color/white_transparent"
+        android:id="@+id/play"
+        app:srcCompat="@drawable/play"
+        android:adjustViewBounds="true"
+        android:elevation="0dp"
+        android:layout_width="100dp"
+        android:layout_above="@+id/done"
+        android:layout_alignLeft="@+id/record"
+        android:layout_alignStart="@+id/record" />
 
 
 </RelativeLayout>
