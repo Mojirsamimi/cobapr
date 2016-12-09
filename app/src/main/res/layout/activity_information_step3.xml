@@ -9,7 +9,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:srcCompat="@drawable/step3_after"
+        app:srcCompat="@drawable/blue_arrow"
         android:id="@+id/imageView2"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
@@ -20,6 +20,7 @@
 
     <Button
         android:text="NEXT"
+        android:textColor="#FFFFFF"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/next3"
@@ -28,7 +29,9 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true"
         android:layout_marginRight="35dp"
-        android:layout_marginEnd="35dp" />
+        android:layout_marginEnd="35dp"
+        android:background="@drawable/button_selector"
+        />
 
 
 </RelativeLayout>

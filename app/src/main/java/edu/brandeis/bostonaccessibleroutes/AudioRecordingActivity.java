@@ -16,6 +16,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import java.io.IOException;
@@ -28,8 +29,8 @@ import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 
 public class AudioRecordingActivity extends AppCompatActivity {
 
-    Button buttonStart, buttonStop, buttonPlayLastRecordAudio,
-            buttonStopPlayingRecording, buttonDone;
+    ImageButton buttonStart, buttonStop, buttonPlayLastRecordAudio, buttonStopPlayingRecording;
+    Button buttonDone;
     String AudioSavePathInDevice = null;
     MediaRecorder mediaRecorder;
     Random random;
@@ -42,10 +43,10 @@ public class AudioRecordingActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_audio_recording);
 
-        buttonStart = (Button) findViewById(R.id.record);
-        buttonStop = (Button) findViewById(R.id.stop);
-        buttonPlayLastRecordAudio = (Button) findViewById(R.id.play);
-        buttonStopPlayingRecording = (Button) findViewById(R.id.stopPlay);
+        buttonStart = (ImageButton) findViewById(R.id.record);
+        buttonStop = (ImageButton) findViewById(R.id.stop);
+        buttonPlayLastRecordAudio = (ImageButton) findViewById(R.id.play);
+        buttonStopPlayingRecording = (ImageButton) findViewById(R.id.stopPlay);
         buttonDone = (Button) findViewById(R.id.done);
 
         buttonStop.setEnabled(false);
