@@ -4,45 +4,125 @@
     <uses-feature android:name="android.hardware.camera" android:required="true">
     </uses-feature>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.STORAGE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppThemeNoTitleBar">
+        android:theme="@style/AppThemeNoTitleBar"
+        android:name="edu.brandeis.bostonaccessibleroutes.Application">
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDZFt1cTkk0L9qcUf2KN2dJ0s9tmkGg5Og" />
 
-        <activity android:name=".DataCollectionActivity">
+        <activity
+            android:name=".SplashActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/app_name"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".InfoActivity" android:theme="@style/AppTheme"></activity>
-        <activity android:name=".InfoActivity_step2" android:theme="@style/AppTheme"></activity>
-        <activity android:name=".InfoActivity_step3" android:theme="@style/AppTheme"></activity>
-        <activity android:name=".InfoActivity_step4" android:theme="@style/AppTheme"></activity>
-        <activity android:name=".InfoActivity_step5" android:theme="@style/AppTheme"></activity>
-        <activity android:name=".SelectDataTypeActivity" android:theme="@style/AppTheme"></activity>
-        <activity android:name=".TakePhotoActivity" android:theme="@style/AppTheme"></activity>
-        <activity android:name=".MapDisplayActivity" android:theme="@style/AppTheme"></activity>
-        <activity android:name=".RoadConditionInfoActivity" android:theme="@style/AppTheme"></activity>
+        <activity
+            android:name=".SignInActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_sign_in"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            >
+        </activity>
+
+        <activity
+            android:name=".userpools.ForgotPasswordActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_forgot_password"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            >
+        </activity>
+        <activity
+            android:name=".userpools.SignUpActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_sign_up"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            >
+        </activity>
+        <activity
+            android:name=".userpools.MFAActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_mfa"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            >
+        </activity>
+        <activity
+            android:name=".userpools.SignUpConfirmActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/title_activity_sign_up_confirm"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            >
+        </activity>
+
+
+
+        <activity android:name=".DataCollectionActivity" android:screenOrientation="portrait">
+
+        </activity>
+        <activity android:name=".InfoActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".InfoActivity_step2" android:screenOrientation="portrait"/>
+        <activity android:name=".InfoActivity_step3" android:screenOrientation="portrait"/>
+        <activity android:name=".InfoActivity_step4" android:screenOrientation="portrait"/>
+        <activity android:name=".InfoActivity_step5" android:screenOrientation="portrait"/>
+        <activity android:name=".SelectDataTypeActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".TakePhotoActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".MapDisplayActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".RoadConditionInfoActivity" android:screenOrientation="portrait"/>
 
         <activity android:name=".dbutil.AndroidDatabaseManager"
-            android:theme="@style/Theme.AppCompat.Light"/>
-        <activity android:name=".AudioRecordingActivity" android:theme="@style/AppTheme"></activity>
+            android:screenOrientation="portrait"
+           />
+        <activity android:name=".AudioRecordingActivity" android:screenOrientation="portrait"/>
+
+        <service android:name="com.amazonaws.mobileconnectors.s3.transferutility.TransferService" android:enabled="true" />
+
+        <service android:name="com.amazonaws.mobile.downloader.service.DownloadService" />
+
+        <receiver android:name="com.amazonaws.mobile.downloader.service.NetworkStateListener"
+            android:exported="false"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+            </intent-filter>
+        </receiver>
+
+        <provider
+            android:name="com.amazonaws.mobile.downloader.query.DownloadQueueProvider"
+            android:authorities="@string/download_queue_provider_authority"
+            android:enabled="true"
+            android:exported="false">
+        </provider>
+
+        <provider
+            android:name="android.support.v4.content.FileProvider"
+            android:authorities="@string/content_file_provider_authority"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/content_delivery_paths" />
+        </provider>
 
 
     </application>

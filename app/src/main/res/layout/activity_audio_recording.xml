@@ -19,49 +19,46 @@ android:paddingTop="@dimen/activity_vertical_margin">
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Save"
+        android:textColor="#FFFFFF"
+        android:background="@color/guillotine_background"
         android:id="@+id/done"
         android:layout_marginTop="125dp"
         android:layout_below="@+id/stopPlay"
         android:layout_centerHorizontal="true" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="STOP"
-        android:id="@+id/stop"
-        android:layout_alignBaseline="@+id/record"
-        android:layout_alignBottom="@+id/record"
-        android:layout_alignLeft="@+id/done"
-        android:layout_alignStart="@+id/done" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Record"
-        android:id="@+id/record"
-        android:layout_marginTop="75dp"
-        android:layout_below="@+id/imageView"
-        android:layout_alignLeft="@+id/stop"
-        android:layout_alignStart="@+id/stop" />
-
-    <Button
+    <ImageButton
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="Play"
+        android:background="@drawable/ic_play_arrow_black_48dp"
     android:id="@+id/play"
         android:layout_centerVertical="true"
         android:layout_alignLeft="@+id/stopPlay"
         android:layout_alignStart="@+id/stopPlay" />
 
-    <Button
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_fiber_manual_record_black_48dp"
+        android:id="@+id/record"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_stop_black_48dp"
+        android:id="@+id/stop"
+        android:layout_alignParentTop="true"
+        android:layout_alignLeft="@+id/record"
+        android:layout_alignStart="@+id/record" />
+
+    <ImageButton
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:text="STOP"
+        android:background="@drawable/ic_stop_black_48dp"
     android:id="@+id/stopPlay"
-        android:layout_alignBaseline="@+id/play"
-        android:layout_alignBottom="@+id/play"
-        android:layout_alignLeft="@+id/done"
-        android:layout_alignStart="@+id/done" />
+        android:layout_alignTop="@+id/play"
+        android:layout_alignLeft="@+id/record"
+        android:layout_alignStart="@+id/record" />
 
 
 </RelativeLayout>

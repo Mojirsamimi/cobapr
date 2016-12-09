@@ -5,6 +5,7 @@ package edu.brandeis.bostonaccessibleroutes;
  * Created by macy on 11/8/16.
  */
 
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.media.MediaPlayer;
 import android.media.MediaRecorder;
@@ -18,6 +19,8 @@ import android.widget.Button;
 import android.widget.Toast;
 
 import java.io.IOException;
+import java.math.BigInteger;
+import java.security.SecureRandom;
 import java.util.Random;
 
 import static android.Manifest.permission.RECORD_AUDIO;
@@ -52,6 +55,9 @@ public class AudioRecordingActivity extends AppCompatActivity {
         buttonDone.setOnClickListener(new View.OnClickListener() {
 
             public void onClick(View v) {
+                Intent i=new Intent();
+                i.putExtra(TakePhotoActivity.VOICE_PATH_KEY,AudioSavePathInDevice);
+                setResult(RESULT_OK,i);
                 finish();
             }
         });
@@ -149,21 +155,29 @@ public class AudioRecordingActivity extends AppCompatActivity {
     public void MediaRecorderReady() {
         mediaRecorder = new MediaRecorder();
         mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+
         mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
-        mediaRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
+        mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+
+        //mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+        //mediaRecorder.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB);
         mediaRecorder.setOutputFile(AudioSavePathInDevice);
     }
 
     public String CreateRandomAudioFileName(int string) {
-        StringBuilder stringBuilder = new StringBuilder(string);
-        int i = 0;
-        while (i < string) {
-            stringBuilder.append(RandomAudioFileName.
-                    charAt(random.nextInt(RandomAudioFileName.length())));
+//        StringBuilder stringBuilder = new StringBuilder(string);
+//        int i = 0;
+//        while (i < string) {
+//            stringBuilder.append(RandomAudioFileName.
+//                    charAt(random.nextInt(RandomAudioFileName.length())));
+//
+//            i++;
+//        }
+//        return stringBuilder.toString();
 
-            i++;
-        }
-        return stringBuilder.toString();
+        SecureRandom random = new SecureRandom();
+        String randomString=new BigInteger(130, random).toString(32).toUpperCase().substring(0,string);
+        return randomString;
     }
 
     private void requestPermission() {
