@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/button_attach_photo"
             android:layout_gravity="center"
-            android:background="@drawable/ic_camera_enhance_black_48dp"
+            android:background="@drawable/ic_camera_alt_black_48dp"
             android:layout_marginLeft="71dp"
             android:layout_marginStart="71dp"
             android:onClick="launchCamera"

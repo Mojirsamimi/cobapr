@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import java.io.ByteArrayOutputStream;
@@ -37,8 +38,8 @@ public class TakePhotoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_take_photo);
 
-        Button click = (Button) findViewById(R.id.button_attach_photo);
-        Button audio = (Button) findViewById(R.id.button_attach_voice);
+        ImageButton click = (ImageButton) findViewById(R.id.button_attach_photo);
+        ImageButton audio = (ImageButton) findViewById(R.id.button_attach_voice);
         Button button_done = (Button) findViewById(R.id.button_addevidence_done);
         final EditText editText=(EditText)findViewById(R.id.editText);
         result_photo = (ImageView) findViewById((R.id.imageView));
