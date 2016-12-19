@@ -253,6 +253,7 @@ private void saveSidewalkCondition()
                 buildGoogleApiClient();
                 mMap.setMyLocationEnabled(true);
                 mMap.getUiSettings().setZoomControlsEnabled(true);
+               mLastLocation= mMap.getMyLocation();
 
             }else
             {
@@ -263,6 +264,7 @@ private void saveSidewalkCondition()
             buildGoogleApiClient();
             mMap.setMyLocationEnabled(true);
             mMap.getUiSettings().setZoomControlsEnabled(true);
+            mLastLocation= mMap.getMyLocation();
         }
 
     }
@@ -319,7 +321,7 @@ private void saveSidewalkCondition()
         CameraPosition cameraPosition = CameraPosition.builder()
                 .target(latLng)
                 .zoom(18)
-                .bearing(90)
+                //.bearing(90)
                 .build();
         mMap.animateCamera(CameraUpdateFactory.newCameraPosition(cameraPosition),1000,null);
 

@@ -1,2 +1,2 @@
 # cobapr
-City of Boston - Accessible Pedestrian Road
+For more information please see http://accessiblepedestrianroutes.my-free.website/
